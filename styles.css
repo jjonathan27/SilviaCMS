@@ -1,11 +1,39 @@
+/* Campos de formulario accesibles */
+.form-control {
+    background: var(--background-dark);
+    color: var(--text-light);
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 0 2px var(--dominant-purple) inset;
+}
+
+.form-control:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px var(--accent-gold) inset, 0 0 0 4px var(--dominant-purple);
+    outline: none;
+}
+:root {
+    --dominant-purple: #6d28d9; /* Un púrpura vibrante y accesible */
+    --secondary-green: #059669; /* Un verde claro para acciones de éxito */
+    --accent-gold: #f59e0b; /* Un naranja/oro para CTAs y alertas */
+    --background-dark: #1e293b; /* Un fondo oscuro para alto contraste */
+    --text-light: #f8fafc; /* Un color de texto claro para legibilidad */
+    --glass-background: rgba(30, 41, 59, 0.7); /* Fondo para efecto glass */
+}
+
 /* Configuración de Fuentes */
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
 }
 
 /* Efectos Glassmorphism */
 .glass-effect {
-    background: rgba(30, 41, 59, 0.7);
+    background: var(--glass-background);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
@@ -29,8 +57,65 @@ body {
 /* Accesibilidad: Anillos de Enfoque Globales */
 *:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px theme('colors.indigo.500'), 0 0 0 4px theme('colors.slate.900');
+    box-shadow: 0 0 0 2px var(--accent-gold), 0 0 0 4px var(--background-dark);
     transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Botones y Acciones */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border: none;
+}
+
+.btn-success {
+    background-color: var(--secondary-green);
+    color: var(--text-light);
+}
+
+.btn-success:hover {
+    background-color: #06b6d4; /* Un tono más claro de verde para hover */
+}
+
+.btn-cta {
+    background-color: var(--accent-gold);
+    color: var(--background-dark);
+}
+
+.btn-cta:hover {
+    background-color: #fbbF24; /* Un tono más claro de oro para hover */
+}
+
+/* Encabezados y Navegación */
+h1, h2, h3 {
+    color: var(--dominant-purple);
+}
+
+nav {
+    background-color: var(--dominant-purple);
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+/* Alertas */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.alert-warning {
+    background-color: var(--accent-gold);
+    color: var(--background-dark);
 }
 
 /* Animaciones de Toast */

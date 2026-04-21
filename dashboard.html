@@ -10,41 +10,43 @@
 </head>
 <body class="bg-slate-900 text-slate-200 font-sans h-screen overflow-hidden flex">
 
-    <nav class="w-64 bg-slate-800 border-r border-slate-700 flex flex-col transition-all duration-300 z-20" id="sidebar">
-        <div class="p-6 border-b border-slate-700 flex justify-between items-center">
-            <h2 class="text-xl font-bold text-indigo-400">CMS Pro</h2>
+    <nav class="w-64 flex flex-col transition-all duration-300 z-20" id="sidebar" style="background: #3b1876; border-right: 2px solid #25104a;">
+        <div class="p-6 border-b border-[#25104a] flex justify-between items-center">
+            <h2 class="text-xl font-bold flex items-center" style="color: #fff;">
+                <span style="font-size:1.3em;vertical-align:middle;margin-right:0.3em;">🚀</span> CMS Pro
+            </h2>
         </div>
         <ul class="flex-1 overflow-y-auto py-4 space-y-1">
             <li>
-                <a href="#pages" class="nav-link flex items-center px-6 py-3 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500">
-                    <span class="mr-3">📄</span> Páginas
+                <a href="#pages" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color:'#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
+                    <span class="mr-3" style="font-size:1.1em;">📄</span> Páginas
                 </a>
             </li>
             <li>
-                <a href="#sections" class="nav-link flex items-center px-6 py-3 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors duration-200">
-                    <span class="mr-3">🧩</span> Secciones
+                <a href="#sections" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color:'#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
+                    <span class="mr-3" style="font-size:1.1em;">🧩</span> Secciones
                 </a>
             </li>
             <li>
-                <a href="#users" class="nav-link flex items-center px-6 py-3 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors duration-200">
-                    <span class="mr-3">👥</span> Usuarios
+                <a href="#users" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color:'#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
+                    <span class="mr-3" style="font-size:1.1em;">👥</span> Usuarios
                 </a>
             </li>
         </ul>
         <div class="p-4 border-t border-slate-700">
             <div class="text-sm mb-3">
-                <span class="block text-slate-400">Conectado como:</span>
-                <span id="userRoleDisplay" class="font-semibold text-indigo-300">Cargando...</span>
+                <span class="block" style="color: #f8fafc;">Conectado como:</span>
+                <span id="userRoleDisplay" class="font-semibold" style="color: #a3e635;">Cargando...</span>
             </div>
-            <button id="logoutBtn" class="w-full py-2 text-sm text-red-400 border border-red-400/30 rounded hover:bg-red-400/10 transition-colors">
-                Cerrar Sesión
+            <button id="logoutBtn" class="w-full py-2 text-sm font-semibold border-0 rounded transition-colors flex items-center justify-center" style="background: #f59e0b; color: #3b1876;" onmouseover="this.style.background='#fffbe6';this.style.color='#3b1876';" onmouseout="this.style.background='#f59e0b';this.style.color='#3b1876';">
+                <span style="font-size:1.1em;vertical-align:middle;margin-right:0.3em;">🔒</span> Cerrar Sesión
             </button>
         </div>
     </nav>
 
     <main class="flex-1 flex flex-col relative h-full overflow-hidden">
-        <header class="h-16 bg-slate-900/80 backdrop-blur-sm border-b border-slate-700 flex items-center px-8 z-10">
-            <h1 id="moduleTitle" class="text-2xl font-semibold text-white">Dashboard</h1>
+        <header class="h-16 backdrop-blur-sm border-b flex items-center px-8 z-10" style="background: var(--background-dark); border-bottom: 2px solid var(--dominant-purple);">
+            <h1 id="moduleTitle" class="text-2xl font-semibold" style="color: var(--text-light);">📊 Dashboard</h1>
         </header>
         
         <section id="app" class="flex-1 p-8 overflow-y-auto custom-scrollbar relative">
@@ -74,22 +76,22 @@
                 <input type="hidden" id="pageId">
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Título</label>
-                    <input type="text" id="pageTitle" required class="w-full px-3 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <input type="text" id="pageTitle" required class="form-control w-full">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Ruta (Slug)</label>
-                    <input type="text" id="pageSlug" required placeholder="/mi-pagina" class="w-full px-3 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <input type="text" id="pageSlug" required placeholder="/mi-pagina" class="form-control w-full">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Estado</label>
-                    <select id="pageStatus" class="w-full px-3 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <select id="pageStatus" class="form-control w-full">
                         <option value="Borrador">Borrador</option>
                         <option value="Publicado">Publicado</option>
                     </select>
                 </div>
                 <div class="flex justify-end space-x-3 pt-4 border-t border-slate-700">
-                    <button type="button" onclick="closeModal('pageModal')" class="px-4 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-700">Cancelar</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white shadow-md">Guardar</button>
+                    <button type="button" onclick="closeModal('pageModal')" class="btn" style="background: transparent; color: var(--dominant-purple); border: 2px solid var(--dominant-purple);">Cancelar</button>
+                    <button type="submit" class="btn btn-cta">Guardar</button>
                 </div>
             </form>
         </div>
@@ -105,22 +107,22 @@
                 <input type="hidden" id="userId">
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Nombre Completo</label>
-                    <input type="text" id="userName" required class="w-full px-3 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <input type="text" id="userName" required class="form-control w-full">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Correo Electrónico</label>
-                    <input type="email" id="userEmail" required class="w-full px-3 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <input type="email" id="userEmail" required class="form-control w-full">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Rol del Sistema</label>
-                    <select id="userRole" class="w-full px-3 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <select id="userRole" class="form-control w-full">
                         <option value="Colaborador">Colaborador</option>
                         <option value="Admin">Administrador</option>
                     </select>
                 </div>
                 <div class="flex justify-end space-x-3 pt-4 border-t border-slate-700">
-                    <button type="button" onclick="closeModal('userModal')" class="px-4 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-700">Cancelar</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white shadow-md">Guardar</button>
+                    <button type="button" onclick="closeModal('userModal')" class="btn" style="background: transparent; color: var(--dominant-purple); border: 2px solid var(--dominant-purple);">Cancelar</button>
+                    <button type="submit" class="btn btn-cta">Guardar</button>
                 </div>
             </form>
         </div>
@@ -140,12 +142,12 @@
                 <button onclick="closeModal('previewModal')" class="text-slate-500 hover:text-slate-800 font-bold px-2">Cerrar Preview</button>
             </div>
             <div class="p-10 flex-1 overflow-y-auto bg-slate-50 text-slate-900">
-                <h1 id="previewTitle" class="text-4xl font-bold text-slate-800 mb-6">Título</h1>
+                <h1 id="previewTitle" class="text-4xl font-bold" style="color: var(--dominant-purple);">📄 Título</h1>
                 <div class="h-4 bg-slate-200 rounded w-3/4 mb-4"></div>
                 <div class="h-4 bg-slate-200 rounded w-full mb-4"></div>
                 <div class="h-4 bg-slate-200 rounded w-5/6 mb-8"></div>
-                <div class="h-64 bg-slate-200 rounded-lg w-full flex items-center justify-center text-slate-400 border-2 border-dashed border-slate-300">
-                    Área de Bloques / Componentes
+                <div class="h-64 rounded-lg w-full flex items-center justify-center border-2 border-dashed" style="background: #fffbe6; color: var(--accent-gold); border-color: var(--accent-gold);">
+                    🧩 Área de Bloques / Componentes
                 </div>
             </div>
         </div>
