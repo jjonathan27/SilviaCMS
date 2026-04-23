@@ -120,9 +120,9 @@ const renderPages = () => {
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right space-x-3">
-                                <button onclick="openPreview(${p.id})" class="text-indigo-500 hover:text-indigo-300 transition-colors">Ver</button>
-                                <button onclick="openPageModal(${p.id})" class="text-blue-500 hover:text-blue-300 transition-colors">Editar</button>
-                                <button onclick="deleteRecord('pages', ${p.id})" class="text-red-600 hover:text-red-400 transition-colors">Eliminar</button>
+                                <button onclick="openPreview(${p.id})" class="bg-indigo-700 text-white px-3 py-1 rounded font-semibold shadow-sm hover:bg-indigo-800 focus-visible:ring-2 focus-visible:ring-indigo-400 transition-colors">Ver</button>
+                                <button onclick="openPageModal(${p.id})" class="bg-blue-700 text-white px-3 py-1 rounded font-semibold shadow-sm hover:bg-blue-800 focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors">Editar</button>
+                                <button onclick="deleteRecord('pages', ${p.id})" class="bg-red-700 text-white px-3 py-1 rounded font-semibold shadow-sm hover:bg-red-800 focus-visible:ring-2 focus-visible:ring-red-400 transition-colors">Eliminar</button>
                             </td>
                         </tr>
                     `).join('')}
