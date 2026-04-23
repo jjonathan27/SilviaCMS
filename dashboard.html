@@ -12,24 +12,24 @@
 
     <nav class="w-64 flex flex-col transition-all duration-300 z-20" id="sidebar" style="background: #3b1876; border-right: 2px solid #25104a;">
         <div class="p-6 border-b border-[#25104a] flex justify-between items-center">
-            <h2 class="text-xl font-bold flex items-center" style="color: #fff;">
-                <span style="font-size:1.3em;vertical-align:middle;margin-right:0.3em;">🚀</span> CMS Pro
+            <h2 class="text-xl font-bold" style="color: #fff;">
+                CMS Pro
             </h2>
         </div>
         <ul class="flex-1 overflow-y-auto py-4 space-y-1">
             <li>
-                <a href="#pages" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color:'#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
-                    <span class="mr-3" style="font-size:1.1em;">📄</span> Páginas
+                <a href="#pages" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color='#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
+                    Páginas
                 </a>
             </li>
             <li>
-                <a href="#sections" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color:'#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
-                    <span class="mr-3" style="font-size:1.1em;">🧩</span> Secciones
+                <a href="#sections" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color='#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
+                    Secciones
                 </a>
             </li>
             <li>
-                <a href="#users" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color:'#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
-                    <span class="mr-3" style="font-size:1.1em;">👥</span> Usuarios
+                <a href="#users" class="nav-link flex items-center px-6 py-3 font-semibold rounded transition-colors duration-200" style="color:#fff;" onmouseover="this.style.background='#25104a';this.style.color='#f59e0b';" onmouseout="this.style.background='transparent';this.style.color='#fff';">
+                    Usuarios
                 </a>
             </li>
         </ul>
@@ -39,14 +39,14 @@
                 <span id="userRoleDisplay" class="font-semibold" style="color: #a3e635;">Cargando...</span>
             </div>
             <button id="logoutBtn" class="w-full py-2 text-sm font-semibold border-0 rounded transition-colors flex items-center justify-center" style="background: #f59e0b; color: #3b1876;" onmouseover="this.style.background='#fffbe6';this.style.color='#3b1876';" onmouseout="this.style.background='#f59e0b';this.style.color='#3b1876';">
-                <span style="font-size:1.1em;vertical-align:middle;margin-right:0.3em;">🔒</span> Cerrar Sesión
+                Cerrar Sesión
             </button>
         </div>
     </nav>
 
     <main class="flex-1 flex flex-col relative h-full overflow-hidden">
         <header class="h-16 backdrop-blur-sm border-b flex items-center px-8 z-10" style="background: var(--background-dark); border-bottom: 2px solid var(--dominant-purple);">
-            <h1 id="moduleTitle" class="text-2xl font-semibold" style="color: var(--text-light);">📊 Dashboard</h1>
+            <h1 id="moduleTitle" class="text-2xl font-semibold" style="color: var(--text-light);">Dashboard</h1>
         </header>
         
         <section id="app" class="flex-1 p-8 overflow-y-auto custom-scrollbar relative">
@@ -60,7 +60,7 @@
             <h3 class="text-xl font-semibold mb-2 text-white">¿Estás seguro?</h3>
             <p class="text-slate-400 text-sm mb-6">Esta acción no se puede deshacer y el registro será eliminado permanentemente.</p>
             <div class="flex justify-end space-x-3">
-                <button id="cancelModalBtn" class="px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-700 transition-colors">Cancelar</button>
+                <button id="cancelModalBtn" class="px-4 py-2 rounded-lg text-sm font-medium bg-white text-slate-900 border border-slate-400 hover:bg-slate-200 focus-visible:ring-2 focus-visible:ring-indigo-500 transition-colors">Cancelar</button>
                 <button id="confirmModalBtn" class="px-4 py-2 rounded-lg text-sm font-medium bg-red-600 hover:bg-red-700 text-white transition-colors shadow-md">Eliminar</button>
             </div>
         </div>
@@ -90,7 +90,7 @@
                     </select>
                 </div>
                 <div class="flex justify-end space-x-3 pt-4 border-t border-slate-700">
-                    <button type="button" onclick="closeModal('pageModal')" class="btn" style="background: transparent; color: var(--dominant-purple); border: 2px solid var(--dominant-purple);">Cancelar</button>
+                    <button type="button" onclick="closeModal('pageModal')" class="btn" style="background: #fff; color: #1e293b; border: 2px solid var(--dominant-purple); font-weight: bold;">Cancelar</button>
                     <button type="submit" class="btn btn-cta">Guardar</button>
                 </div>
             </form>
@@ -121,7 +121,7 @@
                     </select>
                 </div>
                 <div class="flex justify-end space-x-3 pt-4 border-t border-slate-700">
-                    <button type="button" onclick="closeModal('userModal')" class="btn" style="background: transparent; color: var(--dominant-purple); border: 2px solid var(--dominant-purple);">Cancelar</button>
+                    <button type="button" onclick="closeModal('userModal')" class="btn" style="background: #fff; color: #1e293b; border: 2px solid var(--dominant-purple); font-weight: bold;">Cancelar</button>
                     <button type="submit" class="btn btn-cta">Guardar</button>
                 </div>
             </form>
@@ -132,10 +132,7 @@
         <div class="bg-white rounded-xl shadow-2xl overflow-hidden h-[80vh] flex flex-col">
             <div class="bg-slate-200 border-b border-slate-300 px-4 py-3 flex items-center space-x-2">
                 <div class="flex space-x-1.5">
-                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                </div>
+                <!-- Eliminado decorativo no esencial para accesibilidad -->
                 <div class="ml-4 bg-white px-3 py-1 rounded-md text-sm text-slate-500 flex-1 font-mono border border-slate-300" id="previewUrl">
                     localhost:3000/
                 </div>
@@ -143,11 +140,12 @@
             </div>
             <div class="p-10 flex-1 overflow-y-auto bg-slate-50 text-slate-900">
                 <h1 id="previewTitle" class="text-4xl font-bold" style="color: var(--dominant-purple);">📄 Título</h1>
+                                <h1 id="previewTitle" class="text-4xl font-bold" style="color: var(--dominant-purple);">Título</h1>
                 <div class="h-4 bg-slate-200 rounded w-3/4 mb-4"></div>
                 <div class="h-4 bg-slate-200 rounded w-full mb-4"></div>
                 <div class="h-4 bg-slate-200 rounded w-5/6 mb-8"></div>
                 <div class="h-64 rounded-lg w-full flex items-center justify-center border-2 border-dashed" style="background: #fffbe6; color: var(--accent-gold); border-color: var(--accent-gold);">
-                    🧩 Área de Bloques / Componentes
+                    Área de Bloques / Componentes
                 </div>
             </div>
         </div>

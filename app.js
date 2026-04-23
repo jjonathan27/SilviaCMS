@@ -113,16 +113,16 @@ const renderPages = () => {
                     ${db.pages.map(p => `
                         <tr class="border-b border-slate-700/50 hover:bg-slate-700/20 transition-colors">
                             <td class="px-6 py-4 font-medium text-white">${p.title}</td>
-                            <td class="px-6 py-4 text-slate-400">${p.slug}</td>
+                            <td class="px-6 py-4 text-slate-100">${p.slug}</td>
                             <td class="px-6 py-4">
-                                <span class="px-2 py-1 ${p.status === 'Publicado' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'} rounded-full text-xs">
+                                <span class="px-2 py-1 ${p.status === 'Publicado' ? 'bg-emerald-700 text-white' : 'bg-amber-600 text-white'} rounded-full text-xs font-bold">
                                     ${p.status}
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right space-x-3">
-                                <button onclick="openPreview(${p.id})" class="text-indigo-400 hover:text-indigo-300 transition-colors">Ver</button>
-                                <button onclick="openPageModal(${p.id})" class="text-blue-400 hover:text-blue-300 transition-colors">Editar</button>
-                                <button onclick="deleteRecord('pages', ${p.id})" class="text-red-400 hover:text-red-300 transition-colors">Eliminar</button>
+                                <button onclick="openPreview(${p.id})" class="text-indigo-500 hover:text-indigo-300 transition-colors">Ver</button>
+                                <button onclick="openPageModal(${p.id})" class="text-blue-500 hover:text-blue-300 transition-colors">Editar</button>
+                                <button onclick="deleteRecord('pages', ${p.id})" class="text-red-600 hover:text-red-400 transition-colors">Eliminar</button>
                             </td>
                         </tr>
                     `).join('')}
@@ -198,27 +198,26 @@ const renderUsers = () => {
                             const initial = safeName.charAt(0).toUpperCase();
                             const safeEmail = u.email || 'Sin correo';
                             const safeRole = u.role || 'Colaborador';
-
                             return `
                             <tr class="border-b border-slate-700/50 hover:bg-slate-700/20 transition-colors">
                                 <td class="px-6 py-4 font-medium text-white flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-indigo-900/80 text-indigo-300 flex items-center justify-center mr-3 font-bold">
+                                    <div class="w-8 h-8 rounded-full bg-indigo-800 text-white flex items-center justify-center mr-3 font-bold">
                                         ${initial}
                                     </div>
                                     ${safeName}
                                 </td>
-                                <td class="px-6 py-4 text-slate-400">${safeEmail}</td>
+                                <td class="px-6 py-4 text-slate-100">${safeEmail}</td>
                                 <td class="px-6 py-4">
-                                    <span class="px-2 py-1 ${safeRole === 'Admin' ? 'bg-indigo-500/20 text-indigo-400' : 'bg-slate-700 text-slate-300'} rounded text-xs">
+                                    <span class="px-2 py-1 ${safeRole === 'Admin' ? 'bg-indigo-700 text-white' : 'bg-slate-700 text-white'} rounded text-xs font-bold">
                                         ${safeRole}
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 text-right space-x-3 flex justify-end items-center">
                                     ${isAdmin ? `
-                                        <button onclick="openUserModal(${u.id})" class="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none">Editar</button>
-                                        <button onclick="deleteRecord('users', ${u.id})" class="text-red-400 hover:text-red-300 transition-colors focus:outline-none">Eliminar</button>
+                                        <button onclick="openUserModal(${u.id})" class="text-blue-500 hover:text-blue-300 transition-colors focus:outline-none">Editar</button>
+                                        <button onclick="deleteRecord('users', ${u.id})" class="text-red-600 hover:text-red-400 transition-colors focus:outline-none">Eliminar</button>
                                     ` : `
-                                        <span class="text-slate-500 text-xs flex items-center bg-slate-800/50 px-2 py-1 rounded" title="Requiere rol Admin">
+                                        <span class="text-white text-xs flex items-center bg-red-700 px-2 py-1 rounded font-bold" title="Requiere rol Admin">
                                             <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                             Bloqueado
                                         </span>
