@@ -115,7 +115,7 @@ const renderPages = () => {
                             <td class="px-6 py-5 font-bold text-white text-lg">${p.title}</td>
                             <td class="px-6 py-5 text-white text-lg">${p.slug}</td>
                             <td class="px-6 py-5">
-                                <span class="px-3 py-2 ${p.status === 'Publicado' ? 'bg-emerald-700 text-white' : 'bg-amber-600 text-white'} rounded text-sm font-bold">
+                                <span class="badge-oval ${p.status === 'Publicado' ? 'bg-emerald-700 text-white' : 'bg-amber-600 text-white'}">
                                     ${p.status}
                                 </span>
                             </td>
@@ -208,7 +208,7 @@ const renderUsers = () => {
                                 </td>
                                 <td class="px-6 py-5 text-white text-lg">${safeEmail}</td>
                                 <td class="px-6 py-5">
-                                    <span class="px-3 py-2 ${safeRole === 'Admin' ? 'bg-indigo-700 text-white' : 'bg-slate-600 text-white'} rounded text-sm font-bold">
+                                    <span class="badge-oval ${safeRole === 'Admin' ? 'bg-indigo-700 text-white' : 'bg-slate-600 text-white'}">
                                         ${safeRole}
                                     </span>
                                 </td>
@@ -217,7 +217,7 @@ const renderUsers = () => {
                                         <button onclick="openUserModal(${u.id})" class="bg-blue-700 text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors">Editar</button>
                                         <button onclick="deleteRecord('users', ${u.id})" class="bg-red-700 text-white px-4 py-2 rounded font-semibold hover:bg-red-800 focus-visible:ring-2 focus-visible:ring-red-400 transition-colors">Eliminar</button>
                                     ` : `
-                                        <span class="text-white text-base flex items-center bg-red-700 px-3 py-2 rounded font-bold" title="Requiere rol Admin">
+                                        <span class="badge-oval text-white text-base flex items-center bg-red-700 font-bold" title="Requiere rol Admin" style="gap:0.25em;">
                                             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                             Bloqueado
                                         </span>
