@@ -99,34 +99,34 @@ const renderPages = () => {
     
     let html = `
         <div class="mb-6 flex justify-between items-center">
-            <h2 class="text-xl text-slate-300">Listado de Páginas</h2>
-            <button onclick="openPageModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors shadow-md text-sm font-medium">
+            <h2 class="text-2xl text-white font-bold">Listado de Páginas</h2>
+            <button onclick="openPageModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors shadow-md text-base font-medium">
                 + Nueva Página
             </button>
         </div>
-        <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-sm">
-            <table class="w-full text-left text-sm text-slate-300">
-                <thead class="bg-slate-900/50 border-b border-slate-700 text-slate-400 uppercase text-xs">
-                    <tr><th class="px-6 py-4">Título</th><th class="px-6 py-4">Ruta (Slug)</th><th class="px-6 py-4">Estado</th><th class="px-6 py-4 text-right">Acciones</th></tr>
+        <div class="bg-slate-800 rounded-xl border border-slate-600 overflow-hidden shadow-sm">
+            <table class="w-full text-left text-base text-white">
+                <thead class="bg-slate-900 border-b border-slate-600 text-white uppercase text-sm font-bold">
+                    <tr><th class="px-6 py-5">Título</th><th class="px-6 py-5">Ruta (Slug)</th><th class="px-6 py-5">Estado</th><th class="px-6 py-5 text-right">Acciones</th></tr>
                 </thead>
                 <tbody>
                     ${db.pages.map(p => `
-                        <tr class="border-b border-slate-700/50 hover:bg-slate-700/20 transition-colors">
-                            <td class="px-6 py-4 font-medium text-white">${p.title}</td>
-                            <td class="px-6 py-4 text-slate-100">${p.slug}</td>
-                            <td class="px-6 py-4">
-                                <span class="px-2 py-1 ${p.status === 'Publicado' ? 'bg-emerald-700 text-white' : 'bg-amber-600 text-white'} rounded-full text-xs font-bold">
+                        <tr class="border-b border-slate-600 hover:bg-slate-700 transition-colors">
+                            <td class="px-6 py-5 font-bold text-white text-lg">${p.title}</td>
+                            <td class="px-6 py-5 text-white text-lg">${p.slug}</td>
+                            <td class="px-6 py-5">
+                                <span class="px-3 py-2 ${p.status === 'Publicado' ? 'bg-emerald-700 text-white' : 'bg-amber-600 text-white'} rounded text-sm font-bold">
                                     ${p.status}
                                 </span>
                             </td>
-                            <td class="px-6 py-4 text-right space-x-3">
-                                <button onclick="openPreview(${p.id})" class="bg-indigo-700 text-white px-3 py-1 rounded font-semibold shadow-sm hover:bg-indigo-800 focus-visible:ring-2 focus-visible:ring-indigo-400 transition-colors">Ver</button>
-                                <button onclick="openPageModal(${p.id})" class="bg-blue-700 text-white px-3 py-1 rounded font-semibold shadow-sm hover:bg-blue-800 focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors">Editar</button>
-                                <button onclick="deleteRecord('pages', ${p.id})" class="bg-red-700 text-white px-3 py-1 rounded font-semibold shadow-sm hover:bg-red-800 focus-visible:ring-2 focus-visible:ring-red-400 transition-colors">Eliminar</button>
+                            <td class="px-6 py-5 text-right space-x-3">
+                                <button onclick="openPreview(${p.id})" class="bg-indigo-700 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-800 focus-visible:ring-2 focus-visible:ring-indigo-400 transition-colors">Ver</button>
+                                <button onclick="openPageModal(${p.id})" class="bg-blue-700 text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors">Editar</button>
+                                <button onclick="deleteRecord('pages', ${p.id})" class="bg-red-700 text-white px-4 py-2 rounded font-semibold hover:bg-red-800 focus-visible:ring-2 focus-visible:ring-red-400 transition-colors">Eliminar</button>
                             </td>
                         </tr>
                     `).join('')}
-                    ${db.pages.length === 0 ? `<tr><td colspan="4" class="px-6 py-8 text-center text-slate-500">No hay páginas creadas.</td></tr>` : ''}
+                    ${db.pages.length === 0 ? `<tr><td colspan="4" class="px-6 py-8 text-center text-white">No hay páginas creadas.</td></tr>` : ''}
                 </tbody>
             </table>
         </div>
@@ -175,20 +175,20 @@ const renderUsers = () => {
     try {
         let html = `
             <div class="mb-6 flex justify-between items-center">
-                <h2 class="text-xl text-slate-300">Cuentas y Perfiles</h2>
+                <h2 class="text-2xl text-white font-bold">Cuentas y Perfiles</h2>
                 ${isAdmin ? `
-                <button onclick="openUserModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors shadow-md text-sm font-medium">
+                <button onclick="openUserModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors shadow-md text-base font-medium">
                     + Nuevo Usuario
-                </button>` : `<span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-md text-sm text-slate-400">Privilegios limitados (Solo lectura)</span>`}
+                </button>` : `<span class="px-4 py-2 bg-slate-700 border border-slate-600 rounded-md text-base text-white font-semibold">Privilegios limitados (Solo lectura)</span>`}
             </div>
-            <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-sm">
-                <table class="w-full text-left text-sm text-slate-300">
-                    <thead class="bg-slate-900/50 border-b border-slate-700 text-slate-400 uppercase text-xs">
+            <div class="bg-slate-800 rounded-xl border border-slate-600 overflow-hidden shadow-sm">
+                <table class="w-full text-left text-base text-white">
+                    <thead class="bg-slate-900 border-b border-slate-600 text-white uppercase text-sm font-bold">
                         <tr>
-                            <th class="px-6 py-4">Nombre</th>
-                            <th class="px-6 py-4">Correo</th>
-                            <th class="px-6 py-4">Rol</th>
-                            <th class="px-6 py-4 text-right">Acciones</th>
+                            <th class="px-6 py-5">Nombre</th>
+                            <th class="px-6 py-5">Correo</th>
+                            <th class="px-6 py-5">Rol</th>
+                            <th class="px-6 py-5 text-right">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -199,26 +199,26 @@ const renderUsers = () => {
                             const safeEmail = u.email || 'Sin correo';
                             const safeRole = u.role || 'Colaborador';
                             return `
-                            <tr class="border-b border-slate-700/50 hover:bg-slate-700/20 transition-colors">
-                                <td class="px-6 py-4 font-medium text-white flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-indigo-800 text-white flex items-center justify-center mr-3 font-bold">
+                            <tr class="border-b border-slate-600 hover:bg-slate-700 transition-colors">
+                                <td class="px-6 py-5 font-bold text-white flex items-center text-lg">
+                                    <div class="w-10 h-10 rounded-full bg-indigo-700 text-white flex items-center justify-center mr-3 font-bold text-lg">
                                         ${initial}
                                     </div>
                                     ${safeName}
                                 </td>
-                                <td class="px-6 py-4 text-slate-100">${safeEmail}</td>
-                                <td class="px-6 py-4">
-                                    <span class="px-2 py-1 ${safeRole === 'Admin' ? 'bg-indigo-700 text-white' : 'bg-slate-700 text-white'} rounded text-xs font-bold">
+                                <td class="px-6 py-5 text-white text-lg">${safeEmail}</td>
+                                <td class="px-6 py-5">
+                                    <span class="px-3 py-2 ${safeRole === 'Admin' ? 'bg-indigo-700 text-white' : 'bg-slate-600 text-white'} rounded text-sm font-bold">
                                         ${safeRole}
                                     </span>
                                 </td>
-                                <td class="px-6 py-4 text-right space-x-3 flex justify-end items-center">
+                                <td class="px-6 py-5 text-right space-x-3 flex justify-end items-center">
                                     ${isAdmin ? `
-                                        <button onclick="openUserModal(${u.id})" class="text-blue-500 hover:text-blue-300 transition-colors focus:outline-none">Editar</button>
-                                        <button onclick="deleteRecord('users', ${u.id})" class="text-red-600 hover:text-red-400 transition-colors focus:outline-none">Eliminar</button>
+                                        <button onclick="openUserModal(${u.id})" class="bg-blue-700 text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors">Editar</button>
+                                        <button onclick="deleteRecord('users', ${u.id})" class="bg-red-700 text-white px-4 py-2 rounded font-semibold hover:bg-red-800 focus-visible:ring-2 focus-visible:ring-red-400 transition-colors">Eliminar</button>
                                     ` : `
-                                        <span class="text-white text-xs flex items-center bg-red-700 px-2 py-1 rounded font-bold" title="Requiere rol Admin">
-                                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                        <span class="text-white text-base flex items-center bg-red-700 px-3 py-2 rounded font-bold" title="Requiere rol Admin">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                             Bloqueado
                                         </span>
                                     `}
